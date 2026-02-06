@@ -6,11 +6,10 @@ definePageMeta({
 });
 
 const route = useRoute();
+const path = withoutTrailingSlash(route.path);
 
-const { data: page } = await useAsyncData("page-" + route.path, () => {
-    return queryCollection("blog")
-        .path(withoutTrailingSlash(route.path))
-        .first();
+const { data: page } = await useAsyncData(`blog-${path}`, () => {
+    return queryCollection("blog").path(path).first();
 });
 
 if (!page.value) {
