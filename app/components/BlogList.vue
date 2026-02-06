@@ -35,5 +35,3 @@ const { data: posts } = await useAsyncData("blog-posts", () => {
         </NuxtLink>
     </div>
 </template>
-
-<style scoped></style>

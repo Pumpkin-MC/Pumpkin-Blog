@@ -56,17 +56,39 @@
 <style scoped>
 @reference "@/assets/css/main.css"
 
+.nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
 .nav a {
-    @apply px-5 py-2.5 no-underline text-muted font-semibold text-base relative transition-all duration-150 ease-in-out;
+    padding: 0.6rem 1.25rem;
+    text-decoration: none;
+    @apply text-muted;
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative;
+    transition: all 0.15s ease;
 }
+
 .nav a::after {
-    @apply content-[''] absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.75 bg-primary transition-[width] duration-150 ease-in-out;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    @apply bg-primary;
+    transition: width 0.15s ease;
 }
+
 .nav a:hover {
     @apply text-foreground;
 }
+
 .nav a:hover::after {
-    @apply w-full;
+    width: 100%;
 }
 
 .icon-btn {
