@@ -3,7 +3,7 @@ const { data: posts } = await useAsyncData("blog-posts", () => {
     return queryCollection("blog")
         .select("id", "title", "description", "date", "path", "author")
         .order("date", "DESC")
-        .where("path", "NOT LIKE", "/blog")
+        .where("path", "<>", "/")
         .all();
 });
 </script>

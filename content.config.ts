@@ -5,7 +5,7 @@ export default defineContentConfig({
     collections: {
         blog: defineCollection({
             type: "page",
-            source: "blog/*.md",
+            source: "*.md",
             schema: z.object({
                 hero: property(z.object({})).inherit(
                     "app/components/TitleSection.vue",

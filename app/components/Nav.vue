@@ -18,7 +18,6 @@
             <NuxtLink to="https://docs.pumpkinmc.org/" external>Docs</NuxtLink>
             <NuxtLink to="/developers/" external>Developers</NuxtLink>
             <NuxtLink to="/contributors/" external>Contributors</NuxtLink>
-            <NuxtLink to="/blog/" external>Blog</NuxtLink>
         </nav>
         <div class="flex items-center gap-2 justify-end">
             <a
