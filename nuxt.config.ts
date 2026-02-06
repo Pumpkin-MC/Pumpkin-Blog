@@ -9,4 +9,13 @@ export default defineNuxtConfig({
     vite: {
         plugins: [tailwindcss()],
     },
+    fonts: {
+        families: [
+            {
+                name: "Bricolage Grotesque",
+                provider: "google",
+                weights: [400, 600, 800],
+            },
+        ],
+    },
 });
