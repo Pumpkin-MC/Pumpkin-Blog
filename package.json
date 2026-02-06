@@ -1,0 +1,19 @@
+{
+    "name": "pumpkin-blog",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview"
+    },
+    "dependencies": {
+        "@nuxt/content": "^3.11.0",
+        "@nuxt/fonts": "^0.13.0",
+        "@nuxt/icon": "^2.2.1",
+        "@nuxt/image": "^2.0.0",
+        "better-sqlite3": "^12.6.2",
+        "nuxt": "^4.3.0"
+    }
+}
