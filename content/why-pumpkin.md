@@ -63,7 +63,7 @@ This actually helped at that time, one of the biggest issues was saving and load
 
 Another contributor, [Bryntet](https://github.com/Bryntet) made a bunch of PRs and helped a lot with the project. We also developed a close connection on Discord. He actually applied for a job, and the employers went through all the commits he made in Pumpkin shortly after, he got the job! This was a huge motivation for me, especially because I was much younger than him.
 
-But what really made the difference was [posting about Pumpkin on HackerNews](https://www.webbindustries.com/hackernews/story/41846636), The post got a lot of attention, which led to the first YouTuber a really big YouTuber [to cover Pumpkin](https://youtu.be/meup98Okxwk?si=WEZzPpy1KqWAR7tP) (Theo t3.gg <3). These events brought many new people in and the popularity of Pumpkin increased by a lot.
+But what really made the difference was [posting about Pumpkin on HackerNews](https://www.webbindustries.com/hackernews/story/41846636), The post got a lot of attention, which led to the first YouTuber a (really big YouTuber) [to cover Pumpkin](https://youtu.be/meup98Okxwk?si=WEZzPpy1KqWAR7tP) (Theo t3.gg <3). These events brought many new people in and the popularity of Pumpkin increased by a lot.
 
 
 ### Problems
