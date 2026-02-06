@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+    documentDriven: true,
+});
+
 const route = useRoute();
 
 const { data: page } = await useAsyncData("page-" + route.path, () => {
