@@ -4,7 +4,7 @@
         class="flex flex-col space-y-3 sm:space-y-0 sm:grid grid-cols-2 md:flex md:flex-row items-center justify-center md:gap-0 md:justify-between px-8 py-4 bg-surface border-b-primary border-b-[3px] sticky top-0 z-50"
     >
         <NuxtLink
-            href="/"
+            href="https://pumpkinmc.org/"
             class="flex items-center gap-2 no-underline font-extrabold text-2xl flex-shrink-0"
             external
         >
@@ -14,10 +14,15 @@
         <nav
             class="nav flex gap-1 lg:gap-2 md:order-0 order-2 col-span-2 justify-center"
         >
-            <NuxtLink to="/" external>Home</NuxtLink>
+            <NuxtLink to="https://pumpkinmc.org/" external>Home</NuxtLink>
             <NuxtLink to="https://docs.pumpkinmc.org/" external>Docs</NuxtLink>
-            <NuxtLink to="/developers/" external>Developers</NuxtLink>
-            <NuxtLink to="/contributors/" external>Contributors</NuxtLink>
+            <NuxtLink to="https://pumpkinmc.org/developers/" external
+                >Developers</NuxtLink
+            >
+            <NuxtLink to="https://pumpkinmc.org/contributors/" external
+                >Contributors</NuxtLink
+            >
+            <NuxtLink to="https://blog.pumpkinmc.org/" external>Blog</NuxtLink>
         </nav>
         <div class="flex items-center gap-2 justify-end">
             <a
@@ -42,7 +47,7 @@
                 <Icon name="fa7-solid:heart" />
             </a>
             <a
-                href="/download/"
+                href="https://pumpkinmc.org/download/"
                 class="download-btn flex items-center justify-center h-10.5 px-5 bg-primary text-black font-bold text-[0.95rem] no-underline border-[3px] border-primary shadow-[3px_3px_0_var(--color-primary)] transition-all duration-100 ease-in-out hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[5px_5px_0_var(--color-primary)]"
                 >Download</a
             >
