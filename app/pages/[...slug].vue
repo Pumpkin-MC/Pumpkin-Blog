@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { withoutTrailingSlash } from "ufo";
+
 definePageMeta({
     documentDriven: true,
 });
@@ -6,7 +8,9 @@ definePageMeta({
 const route = useRoute();
 
 const { data: page } = await useAsyncData("page-" + route.path, () => {
-    return queryCollection("blog").path(route.path).first();
+    return queryCollection("blog")
+        .path(withoutTrailingSlash(route.path))
+        .first();
 });
 
 if (!page.value) {
