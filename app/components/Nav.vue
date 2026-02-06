@@ -28,21 +28,21 @@
                 class="icon-btn"
                 title="GitHub"
             >
-                <Icon size="100%" name="fa7-brands:github" />
+                <Icon size="25" name="fa7-brands:github" />
             </a>
             <a
                 href="https://discord.com/invite/wT8XjrjKkf"
                 class="icon-btn"
                 title="Discord"
             >
-                <Icon size="100%" name="fa7-brands:discord" />
+                <Icon size="25.5" name="fa7-brands:discord" />
             </a>
             <a
                 href="https://github.com/sponsors/Snowiiii"
                 class="sponsor-btn"
                 title="Sponsor"
             >
-                <Icon size="100%" name="fa7-solid:heart" />
+                <Icon size="22" name="fa7-solid:heart" />
             </a>
             <a
                 href="/download/"
