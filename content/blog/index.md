@@ -1,4 +1,6 @@
-# Blog
+---
+title: Blog
+---
 
 ::BlogList
 ::

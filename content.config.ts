@@ -1,4 +1,4 @@
-import { defineContentConfig, defineCollection } from "@nuxt/content";
+import { defineContentConfig, defineCollection, property } from "@nuxt/content";
 import { z } from "zod";
 
 export default defineContentConfig({
@@ -6,11 +6,16 @@ export default defineContentConfig({
         blog: defineCollection({
             type: "page",
             source: "blog/*.md",
-            // Define custom schema for docs collection
             schema: z.object({
-                tags: z.array(z.string()),
+                hero: property(z.object({})).inherit(
+                    "app/components/TitleSection.vue",
+                ),
                 date: z.date(),
-                author: z.string(),
+                author: z.object({
+                    name: z.string(),
+                    url: z.string().url(),
+                }),
+                title: z.string(),
             }),
         }),
     },

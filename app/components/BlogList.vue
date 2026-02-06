@@ -20,7 +20,7 @@ const { data: posts } = await useAsyncData("blog-posts", () => {
                 <h2 class="mt-2">{{ post.title }}</h2>
                 <p>{{ post.description }}</p>
                 <div class="opacity-60 mb-5">
-                    <span>{{ post.author }}</span>
+                    <span>{{ post.author.name }}</span>
                     <span class="mx-2">•</span>
                     <span>{{
                         new Date(post.date).toLocaleDateString(undefined, {
