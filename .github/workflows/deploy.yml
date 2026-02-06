@@ -9,16 +9,16 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v6
             - run: corepack enable
-            - uses: actions/setup-node@v4
+            - uses: actions/setup-node@v6
               with:
-                  node-version: "22"
+                  node-version: "24"
             # Pick your own package manager and build script
             - run: npm install
             - run: npx nuxt build --preset github_pages
             - name: Upload artifact
-              uses: actions/upload-pages-artifact@v3
+              uses: actions/upload-pages-artifact@v4
               with:
                   path: ./.output/public
     # Deployment job
