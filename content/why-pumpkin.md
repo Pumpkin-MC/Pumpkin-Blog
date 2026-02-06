@@ -57,7 +57,7 @@ After a while, I actually got a player to spawn. I also created a Discord server
 
 Reddit was what really started the popularity around Pumpkin. Rust has a community like no other, and I’m sure that is an important part of why Pumpkin is as successful and popular as it is today. I remember first posting on r/rust and the [post got quite a lot of attention](https://www.reddit.com/r/rust/comments/1egx979/minecraft_server_written_in_rust/).
 
-I also just tried to spread a word in general and activitly search for contributors without annoying people or letting it look as if i'm just posting self advertisiment
+I also just tried to spread a word in general and activitly search for contributors without annoying people or letting it look as if i'm just posting self advertisement
 
 This actually helped at that time, one of the biggest issues was saving and loading chunks from Minecraft's Anvil format. It got solved by a very talented contributor and short-term Pumpkin team member, [Lukas](https://github.com/lukas0008) (big thanks this is one of the most complicated things I’ve ever seen)
 
@@ -70,7 +70,7 @@ But what really made the difference was [posting about Pumpkin on HackerNews](ht
 
 At this point, I still worked on Pumpkin **every day** with maybe a few rare exceptions. I finally got what I wanted: there were many new contributors & pull requests coming in. But then it happened for the first time in my life, I had the experience of just sitting there and, instead of spending time coding, going through PR after PR to see what was changed. I have to say, I still prefer coding myself over reviewing code from others, but no matter what, I still tried my best.
 
-Around that time, even some "hype" began to evolve. I also saw the first "hate" directed at the project, and also people constantly posting [a Website listing some oter mostly abonden Minecraft rust server](https://dayssincelastrustmcserver.com/) still until this day, making it look as if this project is nothing special (i swear someone needs to make such an list about Java mc server software)
+Around that time, even some "hype" began to evolve. I also saw the first "hate" directed at the project, and also people constantly posting [a Website listing some other mostly abonden Minecraft rust server](https://dayssincelastrustmcserver.com/) still until this day, making it look as if this project is nothing special (i swear someone needs to make such an list about Java mc server software)
 
 Besides that, some people were just not happy with Pumpkin becoming successful especially some maintainers of similar projects who wanted a piece of the cake. This led to straight advertising on our Discord or even attempts to catfish my account.
 
