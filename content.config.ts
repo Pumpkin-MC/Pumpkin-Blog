@@ -7,9 +7,6 @@ export default defineContentConfig({
             type: "page",
             source: "*.md",
             schema: z.object({
-                hero: property(z.object({})).inherit(
-                    "app/components/TitleSection.vue",
-                ),
                 date: z.date(),
                 author: z.object({
                     name: z.string(),

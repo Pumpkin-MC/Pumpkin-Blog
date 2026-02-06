@@ -32,6 +32,8 @@ export default defineNuxtConfig({
     nitro: {
         prerender: {
             ignore: ["/developers", "/contributors", "/download"],
+            crawlLinks: true,
+            routes: ["/"],
         },
     },
 });
