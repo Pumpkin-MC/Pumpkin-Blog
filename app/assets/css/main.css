@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-    /* Background colors */
     --color-background: #0d0d0d;
     --color-surface: #1a1a1a;
 
@@ -27,8 +26,44 @@
     --radius-none: 0;
 }
 
+html {
+    font-size: 20px; 
+}
+
+body {
+    font-size: 1.1rem;
+}
+
 @layer base {
     body {
-        @apply font-display bg-background text-foreground leading-normal overflow-x-hidden;
+        @apply font-display bg-background text-foreground leading-relaxed overflow-x-hidden;
+    }
+
+    h1 { @apply text-5xl font-black mb-10 text-foreground tracking-tight; }
+    h2 { @apply text-3xl font-bold mt-16 mb-6 text-primary uppercase tracking-widest border-b border-surface pb-2; }
+    h3 { @apply text-2xl font-bold mt-10 mb-4 text-foreground/90; }
+
+    .prose p {
+        @apply mb-8 text-foreground/85 max-w-3xl;
+    }
+
+    .prose a, 
+    .prose h1 a, .prose h2 a, .prose h3 a, 
+    .prose h4 a, .prose h5 a, .prose h6 a {
+        @apply no-underline transition-colors;
+        text-decoration: none !important;
+        border-bottom: none !important;
+    }
+
+    .prose p a {
+        @apply text-primary font-semibold hover:text-white;
+    }
+
+    .prose blockquote {
+        @apply border-l-4 border-primary bg-surface/50 py-2 px-6 italic my-10 text-foreground/90;
+    }
+
+    .prose code {
+        @apply bg-surface text-primary px-1.5 py-0.5 rounded font-mono text-sm;
     }
 }

@@ -9,6 +9,17 @@ export default defineNuxtConfig({
     vite: {
         plugins: [tailwindcss()],
     },
+    app: {
+        head: {
+            link: [
+                {
+                    rel: "icon",
+                    type: "image/svg+xml",
+                    href: "/images/icon.svg",
+                },
+            ],
+        },
+    },
     fonts: {
         families: [
             {
