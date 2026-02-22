@@ -13,6 +13,8 @@ export default defineContentConfig({
                     url: z.string().url(),
                 }),
                 title: z.string(),
+                description: z.string().optional(),
+                image: z.string().url().optional(),
             }),
         }),
     },
