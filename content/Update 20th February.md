@@ -60,7 +60,8 @@ Pumpkin isn't just about the core server anymore. We've got two new exciting rel
 To top it all off, PumpkinMC officially has a new YouTube channel! We'll be posting updates, showcases, and development logs there. Make sure to subscribe at [@PumpkinServer](https://www.youtube.com/@PumpkinServer). 
 
 Check out our latest video below to see some of the new features in action:
-https://youtu.be/Zz6YbXRX7d8
+
+<Youtube videoId="Zz6YbXRX7d8"></Youtube>
 
 This video covers several updates to the Pumpkin server over the last two weeks.
 

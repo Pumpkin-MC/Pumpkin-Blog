@@ -1,4 +1,24 @@
-# Nuxt Content Starter
+# Pumpkin Blog
+
+## Blog Post Format & YouTube Embeds
+
+- Posts are regular Markdown files in the `content/` folder and require frontmatter. Example frontmatter:
+
+```yaml
+---
+date: yyyy-mm-dd
+author:
+	name: Me
+	url: https://github.com/Me
+title: Update - Day Month Year
+---
+```
+
+- To embed YouTube videos use the `Youtube` content component (with 11-character video ID):
+
+```md
+<Youtube videoId="Zz6YbXRX7d8"></Youtube>
+```
 
 Look at the [Nuxt Content documentation](https://content.nuxt.com) to learn more.
 
