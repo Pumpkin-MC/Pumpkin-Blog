@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { withoutTrailingSlash } from "ufo";
+import { useHead, useRuntimeConfig } from '#imports';
 
 definePageMeta({
     documentDriven: true,
@@ -11,6 +12,30 @@ const path = withoutTrailingSlash(route.path);
 const { data: page } = await useAsyncData(`blog-${path}`, () => {
     return queryCollection("blog").path(path).first();
 });
+
+if (page.value) {
+    // dynamically set document head for SEO / social previews
+    const title = page.value.title || 'Pumpkin Blog';
+    const description = page.value.description || '';
+    const image = page.value.image || '/images/icon.svg';
+    const url = useRuntimeConfig().public.siteUrl + path;
+
+    useHead({
+        title,
+        meta: [
+            { name: 'description', content: description },
+            { property: 'og:title', content: title },
+            { property: 'og:description', content: description },
+            { property: 'og:type', content: 'article' },
+            { property: 'og:url', content: url },
+            { property: 'og:image', content: image },
+            { name: 'twitter:card', content: 'summary_large_image' },
+            { name: 'twitter:title', content: title },
+            { name: 'twitter:description', content: description },
+            { name: 'twitter:image', content: image },
+        ],
+    });
+}
 
 if (!page.value) {
     throw createError({

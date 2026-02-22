@@ -9,8 +9,22 @@ export default defineNuxtConfig({
     vite: {
         plugins: [tailwindcss()],
     },
+    runtimeConfig: {
+        public: {
+            siteUrl: 'https://blog.pumpkinmc.org',
+        },
+    },
     app: {
         head: {
+            titleTemplate: '%s | Pumpkin Blog',
+            meta: [
+                { charset: 'utf-8' },
+                { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+                { name: 'description', content: 'Thoughts, updates, and more from Pumpkin-MC.' },
+                { property: 'og:site_name', content: 'Pumpkin Blog' },
+                { name: 'twitter:card', content: 'summary_large_image' },
+                // any other site‑wide defaults
+            ],
             link: [
                 {
                     rel: "icon",
