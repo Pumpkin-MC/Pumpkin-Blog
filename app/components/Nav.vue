@@ -9,7 +9,7 @@
             external
         >
             <NuxtImg class="w-10 h-10" src="images/icon.svg" alt="Pumpkin" />
-            <span>pumpkin</span>
+            <span>Pumpkin</span>
         </NuxtLink>
         <nav
             class="nav flex gap-1 lg:gap-2 md:order-0 order-2 col-span-2 justify-center"
