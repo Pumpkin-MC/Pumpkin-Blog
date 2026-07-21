@@ -31,6 +31,12 @@ export default defineNuxtConfig({
                     type: "image/svg+xml",
                     href: "/images/icon.svg",
                 },
+                {
+                    rel: "alternate",
+                    type: "application/rss+xml",
+                    title: "Pumpkin Blog RSS Feed",
+                    href: "/feed.xml",
+                },
             ],
         },
     },
@@ -47,7 +53,7 @@ export default defineNuxtConfig({
         prerender: {
             ignore: ["/developers", "/contributors", "/download"],
             crawlLinks: true,
-            routes: ["/"],
+            routes: ["/", "/feed.xml"],
         },
     },
 });
