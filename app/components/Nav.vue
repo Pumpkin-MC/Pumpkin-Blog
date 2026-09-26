@@ -40,7 +40,7 @@
                 <Icon name="fa7-brands:discord" />
             </a>
             <a
-                href="https://github.com/sponsors/Snowiiii"
+                href="https://pumpkinmc.org/donate/"
                 class="sponsor-btn"
                 title="Sponsor"
             >
