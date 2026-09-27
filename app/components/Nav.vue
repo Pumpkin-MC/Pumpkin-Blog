@@ -1,15 +1,21 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const colorMode = useColorMode();
+
+const toggleTheme = () => {
+    colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
+};
+</script>
+
 <template>
     <header
-        class="flex flex-col space-y-3 sm:space-y-0 sm:grid grid-cols-2 md:flex md:flex-row items-center justify-center md:gap-0 md:justify-between px-8 py-4 bg-surface border-b-primary border-b-[3px] sticky top-0 z-50"
+        class="flex flex-col space-y-3 sm:space-y-0 sm:grid grid-cols-2 md:flex md:flex-row items-center justify-center md:gap-0 md:justify-between px-8 py-4 bg-surface border-b-primary border-b-[3px] sticky top-0 z-50 transition-colors duration-200"
     >
         <NuxtLink
-            href="https://pumpkinmc.org/"
-            class="flex items-center gap-2 no-underline font-extrabold text-2xl flex-shrink-0"
-            external
+            to="/"
+            class="flex items-center gap-2 no-underline font-extrabold text-2xl flex-shrink-0 text-foreground"
         >
-            <NuxtImg class="w-10 h-10" src="images/icon.svg" alt="Pumpkin" />
-            <span>Pumpkin</span>
+            <NuxtImg class="w-10 h-10 flex-shrink-0" src="/images/icon.svg" alt="" aria-hidden="true" />
+            <span>Pumpkin-Blog</span>
         </NuxtLink>
         <nav
             class="nav flex gap-1 lg:gap-2 md:order-0 order-2 col-span-2 justify-center"
@@ -22,9 +28,24 @@
             <NuxtLink to="https://pumpkinmc.org/contributors/" external
                 >Contributors</NuxtLink
             >
-            <NuxtLink to="https://blog.pumpkinmc.org/" external>Blog</NuxtLink>
+            <NuxtLink to="/">Blog</NuxtLink>
         </nav>
         <div class="flex items-center gap-2 justify-end">
+            <button
+                type="button"
+                class="icon-btn cursor-pointer"
+                :title="colorMode.value === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+                :aria-label="colorMode.value === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+                @click="toggleTheme"
+            >
+                <ClientOnly>
+                    <Icon v-if="colorMode.value === 'dark'" name="fa7-solid:sun" />
+                    <Icon v-else name="fa7-solid:moon" />
+                    <template #fallback>
+                        <Icon name="fa7-solid:moon" />
+                    </template>
+                </ClientOnly>
+            </button>
             <a
                 href="https://github.com/Pumpkin-MC/Pumpkin"
                 class="icon-btn"
@@ -112,7 +133,7 @@
 }
 
 .icon-btn {
-    @apply flex items-center justify-center w-10.5 h-10.5 bg-background text-foreground text-xl no-underline border-[3px] border-foreground shadow-[3px_3px_0_var(--color-foreground)] transition-all duration-100 ease-in-out;
+    @apply flex items-center justify-center w-10.5 h-10.5 bg-background text-foreground text-xl no-underline border-[3px] border-foreground shadow-[3px_3px_0_var(--color-foreground)] transition-all duration-100 ease-in-out cursor-pointer;
 }
 
 .icon-btn:hover {

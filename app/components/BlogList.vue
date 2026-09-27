@@ -14,12 +14,12 @@ const { data: posts } = await useAsyncData("blog-posts", () => {
             v-for="post in posts"
             :to="post.path"
             :key="post.id"
-            class="no-underline text-inherit block mb-5"
+            class="group no-underline text-inherit block mb-5"
         >
-            <section class="px-5 pt-5 hover:bg-white/2 bg-inherit rounded-2xl">
-                <h2 class="mt-2">{{ post.title }}</h2>
-                <p>{{ post.description }}</p>
-                <div class="opacity-60 mb-5">
+            <section class="px-5 pt-5 hover:bg-black/5 dark:hover:bg-white/5 bg-inherit rounded-2xl transition-colors duration-150">
+                <h2 class="mt-2 text-foreground group-hover:text-primary transition-colors">{{ post.title }}</h2>
+                <p class="text-foreground/80 my-2">{{ post.description }}</p>
+                <div class="text-muted text-sm mb-5">
                     <span v-if="post.author">{{ post.author.name }}</span>
                     <span v-if="post.author" class="mx-2">•</span>
                     <span>{{
