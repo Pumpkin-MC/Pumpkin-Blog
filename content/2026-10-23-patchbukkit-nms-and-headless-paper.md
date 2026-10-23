@@ -51,34 +51,7 @@ If plugins require authentic Paper and authentic Minecraft internals to function
 
 In our latest update, we completely removed thousands of lines of mock server code. Instead, PatchBukkit now **boots a real Paper server headlessly inside the JVM**.
 
-```
-+-----------------------------------------------------------+
-|                   Pumpkin (Rust Core)                     |
-|  - World simulation, physics & entity ticking             |
-|  - Network connections & player sessions                  |
-+-----------------------------+-----------------------------+
-                              |
-              [High-Speed Rust <-> Java Bridge]
-                              |
-+-----------------------------v-----------------------------+
-|               PatchBukkit (Embedded Java)                 |
-|                                                           |
-|  +-----------------------------------------------------+  |
-|  |                Headless Paper Server                |  |
-|  |  - Full NMS support & vanilla registries            |  |
-|  |  - Real CraftBukkit types & datapack tags           |  |
-|  +-----------------------------------------------------+  |
-|  |            Dynamic State Synchronization            |  |
-|  |  - World blocks, entities, players, inventories     |  |
-|  |  - Commands & event dispatching                     |  |
-|  +-----------------------------------------------------+  |
-|  |               Virtual Network Pipeline              |  |
-|  |  - Channel emulation for packet & protocol tools   |  |
-|  +-----------------------------------------------------+  |
-|                                                           |
-|     [EssentialsX]   [WorldEdit]   [GrimAC]   [VeinMiner]  |
-+-----------------------------------------------------------+
-```
+![PatchBukkit Architecture](/images/patchbukkit/patchbukkit-architecture.png)
 
 #### Automatic and Legal Setup via Paperclip
 
