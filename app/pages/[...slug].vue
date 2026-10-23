@@ -48,12 +48,12 @@ if (!page.value) {
 
 <template>
     <article
-        class="prose dark:prose-invert prose-orange m-auto min-h-[70%] max-w-screen-lg px-12 pb-20"
+        class="prose dark:prose-invert prose-orange m-auto min-h-[70%] max-w-screen-lg px-4 sm:px-6 md:px-8 lg:px-12 pb-20"
     >
-        <h1 class="pb-0! mb-0! leading-none!" v-if="page?.title">
+        <h1 class="break-words font-extrabold tracking-tight leading-tight pt-6 sm:pt-12 pb-2 sm:pb-4 text-2xl sm:text-4xl md:text-5xl" v-if="page?.title">
             {{ page.title }}
         </h1>
-        <div class="text-muted mt-3">
+        <div class="text-muted mt-2 sm:mt-3">
             <a v-if="page?.author" :href="page.author.url" class="hover:text-primary transition-colors">{{
                 page.author.name
             }}</a>
@@ -66,7 +66,7 @@ if (!page.value) {
                 })
             }}</span>
         </div>
-        <ContentRenderer class="mt-10" v-if="page" :value="page">
+        <ContentRenderer class="mt-8 sm:mt-10" v-if="page" :value="page">
             Hello
         </ContentRenderer>
     </article>
@@ -76,6 +76,6 @@ if (!page.value) {
 @reference "@/assets/css/main.css";
 
 h1 {
-    @apply text-5xl font-extrabold pb-8 pt-12;
+    @apply text-2xl sm:text-4xl md:text-5xl font-extrabold pt-6 sm:pt-12 pb-2 sm:pb-4 leading-tight tracking-tight break-words;
 }
 </style>

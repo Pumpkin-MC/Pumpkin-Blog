@@ -65,12 +65,24 @@ body {
         @apply font-display bg-background text-foreground leading-relaxed overflow-x-hidden;
     }
 
-    h1 { @apply text-5xl font-black mb-10 text-foreground tracking-tight; }
-    h2 { @apply text-3xl font-bold mt-16 mb-6 text-primary uppercase tracking-widest border-b border-border dark:border-surface pb-2; }
-    h3 { @apply text-2xl font-bold mt-10 mb-4 text-foreground/90; }
+    h1 { @apply text-2xl sm:text-4xl md:text-5xl font-black mb-6 sm:mb-10 text-foreground tracking-tight leading-tight break-words; }
+    h2 { @apply text-xl sm:text-2xl md:text-3xl font-bold mt-12 sm:mt-16 mb-4 sm:mb-6 text-primary uppercase tracking-widest border-b border-border dark:border-surface pb-2; }
+    h3 { @apply text-lg sm:text-xl md:text-2xl font-bold mt-8 sm:mt-10 mb-3 sm:mb-4 text-foreground/90; }
 
     .prose p {
         @apply mb-8 text-foreground/90 max-w-3xl;
+    }
+
+    .prose p:has(img) {
+        @apply max-w-3xl mx-auto flex flex-col items-center justify-center my-6 text-center;
+    }
+
+    .prose img {
+        @apply mx-auto block rounded-xl max-w-full h-auto border border-black/10 dark:border-white/10 shadow-lg;
+    }
+
+    .prose figure {
+        @apply max-w-3xl mx-auto my-6 text-center;
     }
 
     .prose a, 
