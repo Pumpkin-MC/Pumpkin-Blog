@@ -51,12 +51,14 @@
 }
 
 html {
-    font-size: 20px;
-    color-scheme: light dark;
+    color-scheme: light;
+}
+
+html.dark {
+    color-scheme: dark;
 }
 
 body {
-    font-size: 1.1rem;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
