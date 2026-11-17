@@ -7,71 +7,44 @@ const toggleTheme = () => {
 </script>
 
 <template>
-    <header
-        class="flex flex-col space-y-3 sm:space-y-0 sm:grid grid-cols-2 md:flex md:flex-row items-center justify-center md:gap-0 md:justify-between px-8 py-4 bg-surface border-b-primary border-b-[3px] sticky top-0 z-50 transition-colors duration-200"
-    >
-        <NuxtLink
-            to="/"
-            class="flex items-center gap-2 no-underline font-extrabold text-2xl flex-shrink-0 text-foreground"
-        >
-            <NuxtImg class="w-10 h-10 flex-shrink-0" src="/images/icon.svg" alt="" aria-hidden="true" />
-            <span>Pumpkin-Blog</span>
-        </NuxtLink>
-        <nav
-            class="nav flex gap-1 lg:gap-2 md:order-0 order-2 col-span-2 justify-center"
-        >
-            <NuxtLink to="https://pumpkinmc.org/" external>Home</NuxtLink>
-            <NuxtLink to="https://docs.pumpkinmc.org/" external>Docs</NuxtLink>
-            <NuxtLink to="https://pumpkinmc.org/developers/" external
-                >Developers</NuxtLink
-            >
-            <NuxtLink to="https://pumpkinmc.org/contributors/" external
-                >Contributors</NuxtLink
-            >
-            <NuxtLink to="/">Blog</NuxtLink>
-        </nav>
-        <div class="flex items-center gap-2 justify-end">
-            <button
-                type="button"
-                class="icon-btn cursor-pointer"
-                :title="colorMode.value === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
-                :aria-label="colorMode.value === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
-                @click="toggleTheme"
-            >
-                <ClientOnly>
-                    <Icon v-if="colorMode.value === 'dark'" name="fa7-solid:sun" />
-                    <Icon v-else name="fa7-solid:moon" />
-                    <template #fallback>
-                        <Icon name="fa7-solid:moon" />
-                    </template>
-                </ClientOnly>
-            </button>
-            <a
-                href="https://github.com/Pumpkin-MC/Pumpkin"
-                class="icon-btn"
-                title="GitHub"
-            >
-                <Icon name="fa7-brands:github" />
-            </a>
-            <a
-                href="https://discord.com/invite/wT8XjrjKkf"
-                class="icon-btn"
-                title="Discord"
-            >
-                <Icon name="fa7-brands:discord" />
-            </a>
-            <a
-                href="https://pumpkinmc.org/donate/"
-                class="sponsor-btn"
-                title="Sponsor"
-            >
-                <Icon name="fa7-solid:heart" />
-            </a>
-            <a
-                href="https://pumpkinmc.org/download/"
-                class="download-btn flex items-center justify-center h-10.5 px-5 bg-primary text-black font-bold text-[0.95rem] no-underline border-[3px] border-primary shadow-[3px_3px_0_var(--color-primary)] transition-all duration-100 ease-in-out hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[5px_5px_0_var(--color-primary)]"
-                >Download</a
-            >
+    <header class="sticky top-0 z-50 border-b-3 border-primary bg-surface text-foreground">
+        <div class="mx-auto flex max-w-325 flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3 lg:flex-nowrap lg:gap-x-3 lg:py-3.5 xl:gap-x-4 xl:px-8">
+            <NuxtLink to="/" class="flex shrink-0 items-center gap-2 text-xl font-extrabold lg:text-2xl">
+                <NuxtImg src="/images/icon.svg" class="size-8 lg:size-10" alt="" />
+                <span>Pumpkin Blog</span>
+            </NuxtLink>
+
+            <nav aria-label="Main navigation" class="nav order-last flex w-full flex-wrap gap-x-1 lg:order-0 lg:w-auto lg:flex-nowrap">
+                <NuxtLink to="https://pumpkinmc.org/" external>Home</NuxtLink>
+                <NuxtLink to="https://docs.pumpkinmc.org/" external>Docs</NuxtLink>
+                <NuxtLink to="https://pumpkinmc.org/developers/" external>Developers</NuxtLink>
+                <NuxtLink to="https://pumpkinmc.org/contributors/" external>Contributors</NuxtLink>
+                <NuxtLink to="/">Blog</NuxtLink>
+            </nav>
+
+            <div class="flex flex-wrap items-center gap-2 sm:ml-auto lg:flex-nowrap">
+                <button type="button" class="header-btn icon-btn cursor-pointer" title="Toggle color theme" @click="toggleTheme">
+                    <span class="sr-only dark:hidden">Switch to dark mode</span>
+                    <span class="sr-only hidden dark:inline">Switch to light mode</span>
+                    <svg aria-hidden="true" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path class="dark:hidden" d="M20.9 13.3A9 9 0 0 1 10.7 3.1a9 9 0 1 0 10.2 10.2Z" />
+                        <g class="hidden dark:inline">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" />
+                        </g>
+                    </svg>
+                </button>
+                <a href="https://github.com/Pumpkin-MC/Pumpkin" class="header-btn icon-btn" aria-label="GitHub">
+                    <Icon name="fa7-brands:github" size="20" />
+                </a>
+                <a href="https://discord.com/invite/wT8XjrjKkf" class="header-btn icon-btn" aria-label="Discord">
+                    <Icon name="fa7-brands:discord" size="20" />
+                </a>
+                <a href="https://pumpkinmc.org/sponsor/" class="header-btn sponsor-btn" aria-label="Sponsor">
+                    <Icon name="fa7-solid:heart" size="18" />
+                </a>
+                <a href="https://pumpkinmc.org/download/" class="header-btn download-btn">Download</a>
+            </div>
         </div>
     </header>
 </template>
@@ -79,104 +52,30 @@ const toggleTheme = () => {
 <style scoped>
 @reference "@/assets/css/main.css";
 
-.nav {
-    display: flex;
-    gap: 0.5rem;
+.nav a {
+    @apply relative inline-flex h-8 items-center whitespace-nowrap px-1.5 text-sm font-semibold text-muted lg:h-10.5 lg:px-2.5 lg:text-base xl:px-4;
+}
 
-    a {
-        padding: 0.6rem 1.25rem;
-        text-decoration: none;
-        @apply text-muted;
-        font-weight: 600;
-        font-size: 1rem;
-        position: relative;
-        transition: all 0.15s ease;
-    }
+.nav a:is(:hover, :focus-visible, [aria-current="page"]) {
+    @apply text-foreground after:absolute after:inset-x-2 after:bottom-0 after:h-0.75 after:bg-primary xl:after:inset-x-4;
+}
 
-    a::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 3px;
-        @apply bg-primary;
-        transition: width 0.15s ease;
-    }
-
-    a:hover {
-        @apply text-foreground;
-    }
-
-    a:hover::after {
-        width: 100%;
-    }
-
-    @media (width <= theme(--breakpoint-lg)) {
-        a {
-            padding: 0.4rem 0.6rem;
-            font-size: 0.8rem;
-        }
-
-        a::after {
-            display: none;
-        }
-    }
-
-    @media (width <= theme(--breakpoint-md)) {
-        a {
-            padding: 0.3rem 0.4rem;
-            font-size: 0.7rem;
-        }
-    }
+.header-btn {
+    @apply inline-flex h-9 items-center justify-center border-3 border-current transition duration-100 lg:h-10.5 lg:shadow-[3px_3px_0_var(--button-shadow)] lg:hover:-translate-0.5 lg:hover:shadow-[5px_5px_0_var(--button-shadow)] motion-reduce:transition-none;
 }
 
 .icon-btn {
-    @apply flex items-center justify-center w-10.5 h-10.5 bg-background text-foreground text-xl no-underline border-[3px] border-foreground shadow-[3px_3px_0_var(--color-foreground)] transition-all duration-100 ease-in-out cursor-pointer;
-}
-
-.icon-btn:hover {
-    @apply -translate-x-0.5 -translate-y-0.5 shadow-[5px_5px_0_var(--color-primary)] border-primary text-primary;
+    --button-shadow: currentColor;
+    @apply w-9 bg-background text-foreground hover:text-primary lg:w-10.5;
 }
 
 .sponsor-btn {
-    @apply flex items-center justify-center w-10.5 h-10.5 bg-pink text-black text-[1.1rem] no-underline border-[3px] border-pink shadow-[3px_3px_0_var(--color-pink)] transition-all duration-100 ease-in-out;
+    --button-shadow: var(--color-pink);
+    @apply w-9 border-pink bg-pink text-black lg:w-10.5;
 }
 
-.sponsor-btn:hover {
-    @apply -translate-x-0.5 -translate-y-0.5 shadow-[5px_5px_0_var(--color-pink)];
-}
-
-@media (width <= theme(--breakpoint-lg)) {
-    .download-btn {
-        height: 34px;
-        padding: 0 0.75rem;
-        font-size: 0.8rem;
-        box-shadow: none;
-    }
-
-    .icon-btn,
-    .sponsor-btn {
-        width: 34px;
-        height: 34px;
-        font-size: 1rem;
-        box-shadow: none;
-    }
-}
-
-@media (width <= theme(--breakpoint-md)) {
-    .download-btn {
-        height: 28px;
-        padding: 0 0.4rem;
-        font-size: 0.7rem;
-    }
-
-    .icon-btn,
-    .sponsor-btn {
-        width: 28px;
-        height: 28px;
-        font-size: 0.85rem;
-    }
+.download-btn {
+    --button-shadow: var(--color-primary);
+    @apply border-primary bg-primary px-3 text-sm font-bold text-black lg:px-5 lg:text-[0.95rem];
 }
 </style>
